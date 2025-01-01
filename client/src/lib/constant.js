@@ -1,5 +1,5 @@
-export const pathImg = "http://localhost:8080/";
-// export const pathImg = "https://sv.hotgirlsclub.vip/";
+// export const pathImg = "http://localhost:8080/";
+export const pathImg = "https://sv.hotgirlsclub.vip/";
 
 export const navLinks = [
   // {
