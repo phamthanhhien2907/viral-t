@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "React에 오신 것을 환영합니다"
+  },
+  "home": {
+    "marquee": "클럽 스카이 36에 오신 것을 환영합니다. 63개 성에서 콜걸, PGA, 베이비 서비스를 제공합니다. 베트남에서 가장 신뢰할 수 있는 서비스, 직접 가격 책정, 투명하고 명확한 정보. 24/24 성심성의껏 고객님을 모시겠습니다. 보안 - 신뢰 - 품질",
+    "mission": "1박 미션",
+    "more": "더 보기",
+    "vip1": "VIP 1 업그레이드",
+    "vip2": "VIP 2 업그레이드",
+    "vip3": "VIP 3 업그레이드",
+    "popular": "인기",
+    "propose": "제안",
+    "information": "새 비디오 업데이트 중"
+  },
+  "cinema": {
+    "hotMovies": "인기 영화",
+    "vietnamMovies": "베트남 영화",
+    "japanMovies": "일본 영화",
+    "hongKongMovies": "홍콩 영화",
+    "cinemaTitle": "영화관",
+    "hotMovie": "인기 영화",
+    "watch": "보기"
+  },
+  "profile": {
+    "vipLevel": "VIP ",
+    "deposit": "입금",
+    "withdraw": "출금",
+    "contact": "고객 서비스 센터로 문의하십시오",
+    "wallet": "내 지갑",
+    "balance": "잔액",
+    "creditScore": "신용 점수",
+    "accountDetails": "계정 세부 정보",
+    "personalInfo": "개인 정보",
+    "withdrawHistory": "출금 내역",
+    "depositHistory": "입금 내역",
+    "reviewHistory": "리뷰 내역",
+    "bankLink": "은행 연결"
+  },
+  "navigation": {
+    "home": "홈",
+    "evalute": "평가",
+    "evalutePhone": "평가",
+    "cinema": "영화관",
+    "cinemaPhone": "영화관",
+    "profile": "프로필"
+  },
+  "form": {
+    "usernamePlaceholder": "사용자 이름",
+    "passwordPlaceholder": "비밀번호",
+    "codePlaceholder": "추천 코드",
+    "usernameError": "사용자 이름은 필수입니다",
+    "passwordError": "비밀번호는 필수입니다",
+    "codedError": "추천 코드가 필요합니다",
+    "codedLengthError": "추천코드는 6자 이상이어야 합니다.",
+    "loginButton": "로그인",
+    "registerButton": "회원가입",
+    "backToLogin": "로그인으로 돌아가기",
+    "signupAccount": "계정 등록하기"
+  },
+  "languageSelector": "언어 변경",
+  "contact": "고객 서비스 문의",
+  "registerTitle": "회원가입",
+  "loginTitle": "로그인",
+  "evalute": {
+    "title": "투표 로비",
+    "evaluationHistory": "평가 기록",
+    "all": "모두",
+    "vip_upgrade": "VIP 업그레이드",
+    "vip_upgrade_1": "VIP 1 업그레이드",
+    "vip_upgrade_2": "VIP 2 업그레이드",
+    "vip_upgrade_3": "VIP 3 업그레이드",
+    "vip_upgrade_4": "VIP 4 업그레이드",
+    "vip_upgrade_5": "VIP 5 업그레이드",
+    "vip_upgrade_6": "VIP 6 업그레이드"
+  },
+  "setBank": {
+    "title": "이름 수정",
+    "linkedBank": "은행과 연결됨",
+    "save_button": "저장",
+    "full_name_label": "실명",
+    "full_name_placeholder": "실명을 입력하세요",
+    "account_holder_label": "계좌 소유자",
+    "account_holder_placeholder": "계좌 소유자 이름을 입력하세요",
+    "account_number_label": "계좌 번호",
+    "account_number_placeholder": "계좌 번호를 입력하세요",
+    "bank_name_label": "은행 이름",
+    "bank_name_placeholder": "은행 이름을 입력하세요",
+    "personal_info_label": "개인 정보",
+    "link_bank_prompt": "은행 계좌를 연결하세요",
+    "warning_text": "계정의 안전을 보장하기 위해 실명은 은행 카드의 이름과 일치해야 합니다."
+  },
+  "setting": {
+    "settings": "설정",
+    "information": "정보 설정",
+    "changePassword": "비밀번호 변경",
+    "logout": "로그아웃"
+  },
+  "inf": {
+    "personalInfo": "개인 정보",
+    "realName": "실제 이름",
+    "gender": "성별",
+    "bankLink": "은행 연결",
+    "linked": "연결됨",
+    "notLinked": "연결되지 않음"
+  },
+  "setName": {
+    "editName": "이름 수정",
+    "save": "저장",
+    "realName": "실제 이름",
+    "realNameNote": "계정을 안전하게 보호하기 위해 실제 이름은 은행 카드의 이름과 일치해야 합니다."
+  },
+  "password": {
+    "changePassword": "비밀번호 변경",
+    "save": "저장",
+    "oldPassword": "이전 비밀번호",
+    "newPassword": "새 비밀번호",
+    "confirmPassword": "새 비밀번호 확인"
+  },
+  "belt": {
+    "evaluateId": "평가 ",
+    "history": "평가 기록",
+    "loading": "로딩 중...",
+    "previousPeriod": "이전 기간",
+    "result": "결과",
+    "yourSelection": "귀하의 선택",
+    "enterAmount": "금액을 입력하세요",
+    "totalBets": "총 베팅 수는",
+    "allAmount": "전체",
+    "availableMoney": "사용 가능 금액:",
+    "submit": "평가 제출",
+    "choice": "선택",
+    "placeAmount": "평가 금액 설정",
+    "session": "세션",
+    "option": "선택"
+  },
+  "withDraw": {
+    "withdrawPoints": "포인트 출금",
+    "withdrawHistory": "출금 내역",
+    "withdrawAmount": "출금 금액",
+    "enterPoints": "포인트를 입력하세요",
+    "currentBalance": "현재 잔액:",
+    "notes": "주의사항",
+    "note1": "1. 한도: 최소 100, 최대 20,000",
+    "note2": "2. 출금 횟수: 하루 최대 50회",
+    "note3": "3. 시간: 일반적으로 5분 이내, 가장 빠른 시간은 2분",
+    "confirm": "확인"
+  },
+  "gender": {
+    "screen": {
+      "header": {
+        "title": "성별",
+        "backButton": "뒤로",
+        "saveButton": "저장"
+      },
+      "form": {
+        "genderOptions": {
+          "male": "남성",
+          "female": "여성"
+        }
+      }
+    }
+  }
+}

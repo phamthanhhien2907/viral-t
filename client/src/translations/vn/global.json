@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Chào mừng bạn đến với React"
+  },
+  "home": {
+    "marquee": "Chào mừng đã đến CLUB SKY 36. Dịch vụ cung cấp gái gọi, PGA, Baby 63 tỉnh thành. Dịch vụ uy tín nhất VN, báo giá trực tiếp, thông tin minh bạch rõ ràng. Cam kết phục vụ quý khách tận tình 24/24. Bảo Mật - Uy Tín - Chất Lượng",
+    "mission": "Gói nhiệm vụ tình 1 đêm",
+    "more": "Xem thêm",
+    "vip1": "Nâng cấp vip 1",
+    "vip2": "Nâng cấp vip 2",
+    "vip3": "Nâng cấp vip 3",
+    "popular": "Phổ biến",
+    "propose": "Đề xuất",
+    "information": "Đang cập nhật thêm video mới"
+  },
+  "cinema": {
+    "hotMovies": "Phim Hot",
+    "vietnamMovies": "Phim Việt Nam",
+    "japanMovies": "Phim Nhật Bản",
+    "hongKongMovies": "Phim Hồng Kông",
+    "cinemaTitle": "Rạp Chiếu Phim",
+    "hotMovie": "Phim hot",
+    "watch": "Xem"
+  },
+  "profile": {
+    "vipLevel": "VIP ",
+    "deposit": "Nạp tiền",
+    "withdraw": "Rút tiền",
+    "contact": "Vui lòng liên hệ CSKH",
+    "wallet": "Ví của tôi",
+    "balance": "Số tiền",
+    "creditScore": "Điểm tín nhiệm",
+    "accountDetails": "Chi tiết tài khoản",
+    "personalInfo": "Thông tin cá nhân",
+    "withdrawHistory": "Lịch sử rút tiền",
+    "depositHistory": "Lịch sử nạp tiền",
+    "reviewHistory": "Lịch sử đánh giá",
+    "bankLink": "Liên kết ngân hàng"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "evalute": "Sảnh bình chọn",
+    "evalutePhone": "Sảnh",
+    "cinema": "Rạp chiếu phim",
+    "cinemaPhone": "Rạp phim",
+    "profile": "Hồ sơ"
+  },
+  "form": {
+    "usernamePlaceholder": "Tên đăng nhập",
+    "passwordPlaceholder": "Mật khẩu",
+    "codePlaceholder": "Mã giới thiệu",
+    "usernameError": "Tên tài khoản là bắt buộc",
+    "passwordError": "Mật khẩu là bắt buộc",
+    "codedError": "Mã giới thiệu là bắt buộc",
+    "codedLengthError": "Mã giới thiệu phải trên 6 kí tự",
+    "loginButton": "Đăng nhập",
+    "registerButton": "Đăng ký",
+    "backToLogin": "Quay về đăng nhập",
+    "signupAccount": "Đăng ký tài khoản"
+  },
+  "languageSelector": "Đổi ngôn ngữ",
+  "contact": "Liên hệ CSKH",
+  "registerTitle": "Đăng Ký",
+  "loginTitle": "Đăng nhập",
+  "evalute": {
+    "title": "Sảnh bình chọn",
+    "evaluationHistory": "Lịch sử đánh giá",
+    "all": "Tất cả",
+    "vip_upgrade": "Nâng cấp VIP",
+    "vip_upgrade_1": "Nâng cấp VIP 1",
+    "vip_upgrade_2": "Nâng cấp VIP 2",
+    "vip_upgrade_3": "Nâng cấp VIP 3",
+    "vip_upgrade_4": "Nâng cấp VIP 4",
+    "vip_upgrade_5": "Nâng cấp VIP 5",
+    "vip_upgrade_6": "Nâng cấp VIP 6"
+  },
+  "setBank": {
+    "title": "Sửa đổi tên",
+    "linkedBank": "Đã liên kết ngân hàng",
+    "save_button": "Lưu",
+    "full_name_label": "Họ tên thật",
+    "full_name_placeholder": "Nhập họ và tên",
+    "account_holder_label": "Chủ tài khoản",
+    "account_holder_placeholder": "Nhập tên chủ tài khoản",
+    "account_number_label": "Số tài khoản",
+    "account_number_placeholder": "Nhập số tài khoản",
+    "bank_name_label": "Tên ngân hàng",
+    "bank_name_placeholder": "Nhập tên ngân hàng",
+    "personal_info_label": "Thông tin cá nhân",
+    "link_bank_prompt": "Vui lòng liên kết ngân hàng",
+    "warning_text": "Để đảm bảo an toàn cho tài khoản của bạn, họ tên thật cần phải giống với tên trên thẻ ngân hàng."
+  },
+  "setting": {
+    "settings": "Cài Đặt",
+    "information": "Cài đặt thông tin",
+    "changePassword": "Đổi mật khẩu",
+    "logout": "Đăng xuất"
+  },
+  "inf": {
+    "personalInfo": "Thông tin cá nhân",
+    "realName": "Họ tên thật",
+    "gender": "Giới tính",
+    "bankLink": "Liên kết ngân hàng",
+    "linked": "Đã liên kết",
+    "notLinked": "Chưa liên kết"
+  },
+  "setName": {
+    "editName": "Sửa đổi tên",
+    "save": "Lưu",
+    "realName": "Họ tên thật",
+    "realNameNote": "Để đảm bảo an toàn cho tài khoản của bạn, họ tên thật cần phải giống với tên trên thẻ ngân hàng."
+  },
+  "password": {
+    "changePassword": "Đổi mật khẩu",
+    "save": "Lưu",
+    "oldPassword": "Mật khẩu cũ",
+    "newPassword": "Mật khẩu mới",
+    "confirmPassword": "Nhập lại mật khẩu mới"
+  },
+  "belt": {
+    "evaluateId": "Đánh giá ",
+    "history": "Lịch sử đánh giá",
+    "loading": "Đang tải...",
+    "previousPeriod": "Kỳ trước",
+    "result": "Kết quả",
+    "yourSelection": "Lựa chọn của bạn",
+    "enterAmount": "Vui lòng nhập số tiền",
+    "totalBets": "Đặt tổng cộng là",
+    "allAmount": "Toàn bộ",
+    "availableMoney": "Số tiền hiện có:",
+    "submit": "Đánh giá",
+    "choice": "Lựa chọn",
+    "placeAmount": "Số tiền đánh giá",
+    "session": "Phiên",
+    "option": "Lựa chọn"
+  },
+  "withDraw": {
+    "withdrawPoints": "Rút điểm",
+    "withdrawHistory": "Lịch sử rút",
+    "withdrawAmount": "Số tiền rút",
+    "enterPoints": "Vui lòng nhập số điểm",
+    "currentBalance": "Số dư hiện tại:",
+    "notes": "Lưu ý",
+    "note1": "1. Giới hạn: tối thiểu 100, tối đa 20.000",
+    "note2": "2. Số lần rút điểm: tối đa 50 lần/ngày",
+    "note3": "3. Thời gian: Thông thường, thời gian đến là khoảng 5 phút và thời gian nhanh nhất là 2 phút",
+    "confirm": "Xác nhận"
+  },
+  "gender": {
+    "screen": {
+      "header": {
+        "title": "Giới tính",
+        "backButton": "Quay lại",
+        "saveButton": "Lưu"
+      },
+      "form": {
+        "genderOptions": {
+          "male": "Nam",
+          "female": "Nữ"
+        }
+      }
+    }
+  }
+}

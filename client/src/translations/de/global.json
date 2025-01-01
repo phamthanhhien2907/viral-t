@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Willkommen bei React"
+  },
+  "home": {
+    "marquee": "Willkommen im CLUB SKY 36. Dienstleistungen für Callgirls, PGA, Baby in 63 Provinzen. Der vertrauenswürdigste Service in Vietnam, direkte Preisangabe, transparente und klare Informationen. Engagement für Kundenservice 24/24. Vertraulich - Vertrauenswürdig - Qualität",
+    "mission": "Mission für eine Nacht",
+    "more": "Mehr sehen",
+    "vip1": "VIP 1 upgraden",
+    "vip2": "VIP 2 upgraden",
+    "vip3": "VIP 3 upgraden",
+    "popular": "Beliebt",
+    "propose": "Vorschlagen",
+    "information": "Neue Videos werden aktualisiert"
+  },
+  "cinema": {
+    "hotMovies": "Heiße Filme",
+    "vietnamMovies": "Vietnamesische Filme",
+    "japanMovies": "Japanische Filme",
+    "hongKongMovies": "Hongkong Filme",
+    "cinemaTitle": "Kino",
+    "hotMovie": "Heiße Filme",
+    "watch": "Ansehen"
+  },
+  "profile": {
+    "vipLevel": "VIP ",
+    "deposit": "Geld einzahlen",
+    "withdraw": "Geld abheben",
+    "contact": "Bitte kontaktieren Sie den Kundenservice",
+    "wallet": "Mein Wallet",
+    "balance": "Guthaben",
+    "creditScore": "Kreditwürdigkeit",
+    "accountDetails": "Kontodetails",
+    "personalInfo": "Persönliche Informationen",
+    "withdrawHistory": "Abhebungshistorie",
+    "depositHistory": "Einzahlungshistorie",
+    "reviewHistory": "Bewertungshistorie",
+    "bankLink": "Bankverbindung"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "evalute": "Bewerten",
+    "evalutePhone": "Bewerten",
+    "cinema": "Kino",
+    "cinemaPhone": "Kino",
+    "profile": "Profil"
+  },
+  "form": {
+    "usernamePlaceholder": "Benutzername",
+    "passwordPlaceholder": "Passwort",
+    "codePlaceholder": "Code",
+    "usernameError": "Benutzername ist erforderlich",
+    "passwordError": "Passwort ist erforderlich",
+    "codedError": "Code ist erforderlich",
+    "codedLengthError": "Code muss mehr als 6 Zeichen lang sein",
+    "loginButton": "Anmelden",
+    "registerButton": "Registrieren",
+    "backToLogin": "Zurück zur Anmeldung",
+    "signupAccount": "Ein Konto registrieren"
+  },
+  "languageSelector": "Sprache ändern",
+  "contact": "Kundendienst kontaktieren",
+  "registerTitle": "Registrieren",
+  "loginTitle": "Anmelden",
+  "evalute": {
+    "title": "Wahl Lobby",
+    "evaluationHistory": "Bewertungshistorie",
+    "all": "Alle",
+    "vip_upgrade": "VIP Upgrade",
+    "vip_upgrade_1": "VIP 1 Upgrade",
+    "vip_upgrade_2": "VIP 2 Upgrade",
+    "vip_upgrade_3": "VIP 3 Upgrade",
+    "vip_upgrade_4": "VIP 4 Upgrade",
+    "vip_upgrade_5": "VIP 5 Upgrade",
+    "vip_upgrade_6": "VIP 6 Upgrade"
+  },
+  "setBank": {
+    "title": "Name bearbeiten",
+    "linkedBank": "Mit der Bank verbunden",
+    "save_button": "Speichern",
+    "full_name_label": "Vollständiger Name",
+    "full_name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
+    "account_holder_label": "Kontoinhaber",
+    "account_holder_placeholder": "Name des Kontoinhabers eingeben",
+    "account_number_label": "Kontonummer",
+    "account_number_placeholder": "Kontonummer eingeben",
+    "bank_name_label": "Bankname",
+    "bank_name_placeholder": "Bankname eingeben",
+    "personal_info_label": "Persönliche Informationen",
+    "link_bank_prompt": "Bitte verknüpfen Sie Ihr Bankkonto",
+    "warning_text": "Um die Sicherheit Ihres Kontos zu gewährleisten, muss der vollständige Name mit dem Namen auf Ihrer Bankkarte übereinstimmen."
+  },
+  "setting": {
+    "settings": "Einstellungen",
+    "information": "Informationseinstellungen",
+    "changePassword": "Passwort ändern",
+    "logout": "Abmelden"
+  },
+  "inf": {
+    "personalInfo": "Persönliche Informationen",
+    "realName": "Vollständiger Name",
+    "gender": "Geschlecht",
+    "bankLink": "Bankverbindung",
+    "linked": "Verknüpft",
+    "notLinked": "Nicht verknüpft"
+  },
+  "setName": {
+    "editName": "Name bearbeiten",
+    "save": "Speichern",
+    "realName": "Vollständiger Name",
+    "realNameNote": "Um die Sicherheit Ihres Kontos zu gewährleisten, muss der vollständige Name mit dem Namen auf Ihrer Bankkarte übereinstimmen."
+  },
+  "password": {
+    "changePassword": "Passwort ändern",
+    "save": "Speichern",
+    "oldPassword": "Altes Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Neues Passwort bestätigen"
+  },
+  "belt": {
+    "evaluateId": "Bewerten ",
+    "history": "Bewertungshistorie",
+    "loading": "Wird geladen...",
+    "previousPeriod": "Vorheriger Zeitraum",
+    "result": "Ergebnis",
+    "yourSelection": "Ihre Auswahl",
+    "enterAmount": "Bitte Betrag eingeben",
+    "totalBets": "Gesamte Wetten sind",
+    "allAmount": "Gesamt",
+    "availableMoney": "Verfügbares Geld:",
+    "submit": "Bewertung einreichen",
+    "choice": "Wahl",
+    "placeAmount": "Bewertungsbetrag festlegen",
+    "session": "Sitzung",
+    "option": "Option"
+  },
+  "withDraw": {
+    "withdrawPoints": "Punkte abheben",
+    "withdrawHistory": "Abhebungshistorie",
+    "withdrawAmount": "Abhebungsbetrag",
+    "enterPoints": "Bitte Punkte eingeben",
+    "currentBalance": "Aktueller Kontostand:",
+    "notes": "Hinweise",
+    "note1": "1. Limits: Mindestens 100, maximal 20.000",
+    "note2": "2. Anzahl der Abhebungen: Maximal 50 pro Tag",
+    "note3": "3. Zeit: Normalerweise innerhalb von 5 Minuten, die schnellste ist 2 Minuten",
+    "confirm": "Bestätigen"
+  },
+  "gender": {
+    "screen": {
+      "header": {
+        "title": "Geschlecht",
+        "backButton": "Zurück",
+        "saveButton": "Speichern"
+      },
+      "form": {
+        "genderOptions": {
+          "male": "Männlich",
+          "female": "Weiblich"
+        }
+      }
+    }
+  }
+}

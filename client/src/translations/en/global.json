@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "Welcome to React"
+  },
+  "home": {
+    "marquee": "Welcome to CLUB SKY 36. Providing services for call girls, PGA, Baby in 63 provinces. The most trusted service in Vietnam, direct pricing, transparent and clear information. Commitment to serving customers wholeheartedly 24/24. Confidential - Trusted - Quality",
+    "mission": "One-night mission",
+    "more": "See more",
+    "vip1": "Upgrade to VIP 1",
+    "vip2": "Upgrade to VIP 2",
+    "vip3": "Upgrade to VIP 3",
+    "popular": "Popular",
+    "propose": "Propose",
+    "information": "New videos are being updated"
+  },
+  "cinema": {
+    "hotMovies": "Hot Movies",
+    "vietnamMovies": "Vietnamese Movies",
+    "japanMovies": "Japanese Movies",
+    "hongKongMovies": "Hong Kong Movies",
+    "cinemaTitle": "Cinema",
+    "hotMovie": "Hot Movie",
+    "watch": "Watch"
+  },
+  "profile": {
+    "vipLevel": "VIP ",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "contact": "Please contact customer service",
+    "wallet": "My Wallet",
+    "balance": "Balance",
+    "creditScore": "Credit Score",
+    "accountDetails": "Account Details",
+    "personalInfo": "Personal Information",
+    "withdrawHistory": "Withdraw History",
+    "depositHistory": "Deposit History",
+    "reviewHistory": "Review History",
+    "bankLink": "Bank Link"
+  },
+  "navigation": {
+    "home": "Home",
+    "evalute": "Evaluate",
+    "evalutePhone": "Evaluate",
+    "cinema": "Cinema",
+    "cinemaPhone": "Cinema",
+    "profile": "Profile"
+  },
+  "form": {
+    "usernamePlaceholder": "Username",
+    "passwordPlaceholder": "Password",
+    "codePlaceholder": "Code",
+    "usernameError": "Username is required",
+    "passwordError": "Password is required",
+    "codedError": "Code is required",
+    "codedLengthError": "Code must be over 6 characters",
+    "loginButton": "Log in",
+    "registerButton": "Register",
+    "backToLogin": "Back to Login",
+    "signupAccount": "Sign up for an account"
+  },
+  "languageSelector": "Change Language",
+  "contact": "Contact Customer Service",
+  "registerTitle": "Register",
+  "loginTitle": "Login",
+  "evalute": {
+    "title": "Voting Lobby",
+    "evaluationHistory": "Evaluation History",
+    "all": "All",
+    "vip_upgrade": "VIP Upgrade",
+    "vip_upgrade_1": "VIP 1 Upgrade",
+    "vip_upgrade_2": "VIP 2 Upgrade",
+    "vip_upgrade_3": "VIP 3 Upgrade",
+    "vip_upgrade_4": "VIP 4 Upgrade",
+    "vip_upgrade_5": "VIP 5 Upgrade",
+    "vip_upgrade_6": "VIP 6 Upgrade"
+  },
+  "setBank": {
+    "title": "Edit Name",
+    "linkedBank": "Linked to the bank",
+    "save_button": "Save",
+    "full_name_label": "Full Name",
+    "full_name_placeholder": "Enter your full name",
+    "account_holder_label": "Account Holder",
+    "account_holder_placeholder": "Enter account holder name",
+    "account_number_label": "Account Number",
+    "account_number_placeholder": "Enter account number",
+    "bank_name_label": "Bank Name",
+    "bank_name_placeholder": "Enter bank name",
+    "personal_info_label": "Personal Information",
+    "link_bank_prompt": "Please link your bank account",
+    "warning_text": "To ensure the safety of your account, the full name must match the name on your bank card."
+  },
+  "setting": {
+    "settings": "Settings",
+    "information": "Information Settings",
+    "changePassword": "Change Password",
+    "logout": "Logout"
+  },
+  "inf": {
+    "personalInfo": "Personal Information",
+    "realName": "Full Name",
+    "gender": "Gender",
+    "bankLink": "Bank Link",
+    "linked": "Linked",
+    "notLinked": "Not Linked"
+  },
+  "setName": {
+    "editName": "Edit Name",
+    "save": "Save",
+    "realName": "Full Name",
+    "realNameNote": "To ensure the security of your account, the full name must match the name on your bank card."
+  },
+  "password": {
+    "changePassword": "Change Password",
+    "save": "Save",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm New Password"
+  },
+  "belt": {
+    "evaluateId": "Evaluate ",
+    "history": "Evaluation History",
+    "loading": "Loading...",
+    "previousPeriod": "Previous Period",
+    "result": "Result",
+    "yourSelection": "Your Selection",
+    "enterAmount": "Please enter the amount",
+    "totalBets": "Total bets are",
+    "allAmount": "Total",
+    "availableMoney": "Available Money:",
+    "submit": "Submit Evaluation",
+    "choice": "Choice",
+    "placeAmount": "Place Evaluation Amount",
+    "session": "Session",
+    "option": "Option"
+  },
+  "withDraw": {
+    "withdrawPoints": "Withdraw Points",
+    "withdrawHistory": "Withdrawal History",
+    "withdrawAmount": "Withdraw Amount",
+    "enterPoints": "Please enter points",
+    "currentBalance": "Current Balance:",
+    "notes": "Notes",
+    "note1": "1. Limits: Minimum 100, Maximum 20,000",
+    "note2": "2. Number of withdrawals: Maximum 50 per day",
+    "note3": "3. Time: Usually arrives within 5 minutes, the fastest is 2 minutes",
+    "confirm": "Confirm"
+  },
+  "gender": {
+    "screen": {
+      "header": {
+        "title": "Gender",
+        "backButton": "Back",
+        "saveButton": "Save"
+      },
+      "form": {
+        "genderOptions": {
+          "male": "Male",
+          "female": "Female"
+        }
+      }
+    }
+  }
+}
