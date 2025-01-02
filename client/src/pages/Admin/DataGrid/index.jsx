@@ -6,6 +6,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle'
 import {
   GridRowModes,
   DataGrid,
@@ -26,6 +31,8 @@ import { apiUpdatedDesposit, apiUpdatedStatus } from '@/services/userService';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { blue } from '@mui/material/colors';
+import { t } from 'i18next';
+import { Textarea } from '@/components/ui/textarea';
 function EditToolbar(props) {
   const { setRows, setRowModesModel } = props;
 
@@ -58,7 +65,7 @@ const CustomToolbar = ({ setRows, setRowModesModel, showQuickFilter, type }) => 
         Thêm dữ liệu
       </Button> : type === "categoryBelt" ? <Button color="primary" startIcon={<AddIcon />} onClick={() => navigate("/categoryBelt/new")}>
         Thêm dữ liệu
-      </Button> : type === "customer" ? "" : type === "deposit" ?  "" :  type === "withDraw" ?  "" :  <EditToolbar setRows={setRows} setRowModesModel={setRowModesModel} />}
+      </Button> : type === "customer" ? "" : type === "deposit" ?  "" :  type === "withDraw" ?  "" : type === "transform" ?  "" : type === "customerBank" ?  "" : <EditToolbar setRows={setRows} setRowModesModel={setRowModesModel} />}
       <GridToolbar showQuickFilter={showQuickFilter} />
     </div>
   );
@@ -80,6 +87,37 @@ export default function DataGridUI({initialRows, type, callApi}) {
   const [rows, setRows] = React.useState(formattedRows);
   const [rowModesModel, setRowModesModel] = React.useState({});
   const [selectedIds, setSelectedIds] = React.useState([])
+  const [open, setOpen] = React.useState(false);
+  const [reason, setReason] = React.useState("")
+  const [values, setValues] = React.useState(null)
+  const handleClickOpen = (row, type) => {
+    setOpen(true);
+    setValues({...row, type})
+  };
+  console.log(values)
+
+  const handleAction = async() => {
+    if (type === "transform" && values) {
+      try {
+          const response = await apiUpdatedStatus(values?._id, values?.users?._id, {
+            status: values?.type,
+            reson: reason,
+          });
+          if (response?.success) {
+              toast.success(values?.type === "Thành công" ? `Chấp nhận rút tiền với tài khoản ${values?.users?.username}` : `Không chấp nhận rút tiền với tài khoản ${values?.users?.username}`);
+              callApi()
+          } else {
+              toast.error("Đã có lỗi xảy ra khi lưu dữ liệu");
+          }
+      } catch (error) {
+          toast.error("An error occurred while saving data");
+          console.error(error);
+      }
+    }
+  }
+  const handleClose = () => {
+    setOpen(false);
+  };
   const handleSelectionChange = (newSelection) => {
     setSelectedIds(newSelection);
   }
@@ -113,25 +151,6 @@ export default function DataGridUI({initialRows, type, callApi}) {
   };
   const processRowUpdate = async(newRow) => {
     const updatedRow = { ...newRow, isNew: false };
-    console.log(updatedRow)
-      if (type === "transform" && newRow.status  || newRow.reson ) {
-      try {
-          // Replace this with your actual API call
-          const response = await apiUpdatedStatus(newRow?._id, newRow?.users?._id, {
-              status: newRow?.status,
-              reson: newRow?.reson,
-          });
-          if (response?.success) {
-              toast.success("Updated successfully");
-              callApi()
-          } else {
-              toast.error("Update failed");
-          }
-      } catch (error) {
-          toast.error("An error occurred while saving data");
-          console.error(error);
-      }
-      }
       if(type === "customerBank" && newRow.username || newRow.nameOfUser || newRow.creditCartOfBank || newRow.nameOfBank) {
         
           try {
@@ -257,16 +276,15 @@ export default function DataGridUI({initialRows, type, callApi}) {
          return withDraw?.toLocaleString("vi-VN") + "₫"
        
       }, }] : [],
+     
       ...type === 'customerBank'
-      ? [{ field: 'deposit', headerName: 'Nạp tiền', width: 140, editable: true,  renderCell: (params) => {
-        const withDraw = 0
-         return withDraw?.toLocaleString("vi-VN") + "₫"
+      ? [{ field: 'deposit', headerName: 'Nạp tiền', width: 180, editable: true,  renderCell: (params) => {
+         return "Nhập số tiền muốn nạp"
        
       }, }] : [],
       ...type === 'customerBank'
-      ? [{ field: 'depositMinutes', headerName: 'Trừ tiền', width: 140, editable: true,  renderCell: (params) => {
-        const withDraw = 0
-         return withDraw?.toLocaleString("vi-VN") + "₫"
+      ? [{ field: 'depositMinutes', headerName: 'Trừ tiền', width: 180, editable: true,  renderCell: (params) => {
+        return "Nhập số tiền muốn trừ"
        
       }, }] : [],
       ...type === 'customerBank'
@@ -293,14 +311,8 @@ export default function DataGridUI({initialRows, type, callApi}) {
         return withDraw?.toLocaleString("vi-VN") + "₫"
        
       }, }] : [],
-      ...type === 'withDraw' || type === "transform"
-      ? [{ field: 'reson', headerName: 'Mô tả', width: 140, editable: true,  renderCell: (params) => {
-        const withDraw = params.row.reson;
-        return withDraw
-       
-      }, }] : [],
       ...type === 'withDraw'|| type === "transform"
-      ? [{ field: 'status', headerName: 'Trạng thái', width: 160, editable: true,  type: 'singleSelect',  valueOptions: ['Đợi duyệt', 'Thành công', 'Không thành công'],  renderCell: (params) => {
+      ? [{ field: 'status', headerName: 'Trạng thái', width: 160, editable: true, renderCell: (params) => {
         const withDraw = params.row.status;
         return withDraw
        
@@ -330,6 +342,12 @@ export default function DataGridUI({initialRows, type, callApi}) {
       ? [{ field: 'username', headerName: 'Tên thành viên', width: 180, editable: true },
       ]
       : [],
+      ...type === 'customer'
+      ? [{ field: 'vip', headerName: 'Vip (Level)', width: 140, editable: true,  renderCell: (params) => {
+        const withDraw = params.row.vip;
+        return withDraw
+       
+      }, }] : [],
     ...type === 'customer'
       ? [{ field: 'role', headerName: 'Vai trò', width: 180, editable: true },
       ]
@@ -358,7 +376,7 @@ export default function DataGridUI({initialRows, type, callApi}) {
     ...type !==  "withDraw" ? [ {
       field: 'createdAtFormatted',
       headerName: type === "withDraw" ? 'Thời gian cập nhật' : type === "customer" ? 'Thời gian đăng ký' : type === "deposit" ? "Thời gian nạp tiền" : "Thời gian thêm",
-      width: 210,
+      width: 170,
       align: 'left',
       headerAlign: 'left',
       valueGetter: (params) =>  params || "Không có dữ liệu",
@@ -368,7 +386,7 @@ export default function DataGridUI({initialRows, type, callApi}) {
     ...type ===  "withDraw" ? [ {
       field: 'updatedAtFormatted',
       headerName: type === "withDraw" ? 'Thời gian duyệt' : type === "customer" ? 'Thời gian đăng ký' : type === "deposit" ? "Thời gian nạp tiền" : "Thời gian rút tiền",
-      width: 210,
+      width: 170,
       align: 'left',
       headerAlign: 'left',
       valueGetter: (params) =>  params || "Không có dữ liệu",
@@ -379,7 +397,7 @@ export default function DataGridUI({initialRows, type, callApi}) {
       field: 'actions',
       type: 'actions',
       headerName: 'Hành động',
-      width: 100,
+      width: type === "transform" ? 240 : 100,
       cellClassName: 'actions',
       getActions: ({ id, row }) => {
         const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
@@ -406,37 +424,41 @@ export default function DataGridUI({initialRows, type, callApi}) {
         }
 
         return [
-          // eslint-disable-next-line react/jsx-key
-          <GridActionsCellItem
+          type === "transform" ? <div className='flex items-center gap-2'>
+            <button className='w-20 h-8  bg-green-300 hover:bg-green-500' onClick={() => {
+              handleClickOpen(row, "Thành công")
+            }}>Chấp nhận</button>
+            <button className='w-20 h-8  bg-red-500 hover:bg-red-700' onClick={() => {
+              handleClickOpen(row, "Không thành công")
+            }}>Từ chối</button>
+
+          </div> : <>
+          <button className='w-20 flex text-white items-center justify-center h-8 bg-green-500 hover:bg-green-700 font-medium' onClick={handleEditClick(id)}>Chỉnh sửa
+            {/* <GridActionsCellItem
             icon={<EditIcon />}
             label="Edit"
             className="textPrimary"
-            onClick={handleEditClick(id)}
-            sx={{
-              backgroundColor: blue[500], 
-              color: "white",
-              '&:hover': {
-                backgroundColor: blue[800]
-              },
-              borderRadius: "4px",
-              padding: "4px"
-            }}
-          />,
-          // eslint-disable-next-line react/jsx-key
-          <GridActionsCellItem
-            icon={<DeleteIcon />}
-            label="Delete"
-            onClick={handleDeleteClick(id)}
-            sx={{
-              backgroundColor: "red",
-              color: "white",
-              '&:hover': {
-                backgroundColor: "darkred"
-              },
-              borderRadius: "4px",
-              padding: "4px"
-            }}
-          />,
+           
+          
+          /> */}
+          </button>
+            
+       
+        {/* <GridActionsCellItem
+          icon={<DeleteIcon />}
+          label="Delete"
+          onClick={handleDeleteClick(id)}
+          sx={{
+            backgroundColor: "red",
+            color: "white",
+            '&:hover': {
+              backgroundColor: "darkred"
+            },
+            borderRadius: "4px",
+            padding: "4px"
+          }}
+        /> */}
+          </>
         ];
       },
     },
@@ -464,9 +486,9 @@ export default function DataGridUI({initialRows, type, callApi}) {
         columns={data}
         editMode="row"
         rowModesModel={rowModesModel}
-        // disableColumnFilter
-        // disableColumnSelector
-        // disableDensitySelector
+        disableColumnFilter
+        disableColumnSelector
+        disableDensitySelector
         // pageSizeOptions={[5]}
         // checkboxSelection={type === "withDraw"}
         // disableRowSelectionOnClick
@@ -488,6 +510,36 @@ export default function DataGridUI({initialRows, type, callApi}) {
           toolbar: { setRows, setRowModesModel, showQuickFilter: true, type : type },
         }}
       />
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          Bạn có chắc chắn muốn thực hiện hành động này không?
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+          <Textarea
+            onChange={(e) => setReason(e.target.value)}
+            name="Neutral"
+            placeholder="Nhập lý do"
+            variant="outlined"
+            color="neutral"
+          />
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Quay về</Button>
+          <Button onClick={() => {
+            handleAction()
+            handleClose()
+          }} autoFocus>
+            Đồng ý
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }

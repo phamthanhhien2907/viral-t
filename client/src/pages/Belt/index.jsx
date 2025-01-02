@@ -7,6 +7,7 @@ import {  faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loader from "@/components/custom ui/Loader";
 import DataGridUI from "../Admin/DataGrid";
+import moment from "moment";
 const Belt = () => {
   const [lottery, setLottery] = useState([]);
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const Belt = () => {
             }
           }
           return { ...user, gameStatus: "Không rõ" };
-        });
+        }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
         return { ...el, users: updatedUsers };
       });
@@ -90,7 +91,7 @@ const Belt = () => {
           {lottery?.length > 0 ? lottery?.map((el, index) => (
             <div
               key={index}
-              className="w-full border-b-2 border-b-black bg-white flex flex-col gap-1 px-2 py-2 rounded-xl "
+              className="w-full bg-white flex flex-col gap-1 px-2 py-2 "
             >
               {/* <div className="flex flex-col gap-2 ">
                 <span className="text-base font-semibold text-gray-500 max-sm:text-[14px]">
@@ -101,9 +102,10 @@ const Belt = () => {
                 </span>
               </div> */}
               {value?.length > 0 ? <div className="flex flex-col gap-2">
-                <span className="text-base font-semibold text-gray-500 max-sm:text-[14px]">Kết quả đánh giá phòng {el?.room}</span>
+                {/* <span className="text-base font-semibold text-gray-500 max-sm:text-[14px]">Kết quả đánh giá phòng {el?.room}</span> */}
                 {el?.users?.length > 0 ? el?.users?.map((user, userIndex) => {
                   const periodResult = el?.result?.[user.periodNumber - 1]; // Lấy kết quả của vòng hiện tại
+                  const formattedDate = moment(user?.createdAt).format("YYYY-MM-DD HH:mm:ss");
                   const isWin = JSON.stringify(user.result) === JSON.stringify(periodResult);
                   const isDraw = user?.result?.some((r) => periodResult?.includes(r)) && !isWin;
                   const isMatch = 
@@ -113,10 +115,14 @@ const Belt = () => {
                       getResultStringWin(isWin)?.toString().toUpperCase() === searchValue) || (typeof isDraw === "boolean" &&
                         getResultString(isDraw)?.toString().toUpperCase() === searchValue) ||
                     (typeof user?.periodNumber === "number" &&
-                      user?.periodNumber?.toString().toUpperCase() === searchValue);
+                      user?.periodNumber?.toString().toUpperCase() === searchValue) || 
+                      (formattedDate?.includes(searchValue))
                   if(isMatch) {
                     return (
                       <div key={userIndex} className="w-full flex flex-col gap-2 bg-gray-100 rounded-xl py-4 px-2">
+                        <span className="text-sm font-bold max-sm:text-[12px]">
+                          Khoảng thời gian : {moment(user?.createdAt).format("YYYY-MM-DD HH:mm:ss")}
+                        </span>
                         <span className="text-sm font-bold max-sm:text-[12px]">
                           Tài khoản người chơi: {user.UserId?.username}
                         </span>
@@ -150,7 +156,7 @@ const Belt = () => {
                   }
                   }) : <div className="text-black font-semibold max-sm:text-[14px]">Chưa có người chơi nào đánh giá !</div>}
               </div> : <div className="flex flex-col gap-2">
-                <span className="text-base font-semibold text-blue-500 max-sm:text-[14px]">Kết quả đánh giá phòng {el?.room}</span>
+                {/* <span className="text-base font-semibold text-blue-500 max-sm:text-[14px]">Kết quả đánh giá phòng {el?.room}</span> */}
                 {el?.users?.length > 0 ? el?.users?.map((user, userIndex) => {
                   const periodResult = el?.result?.[user.periodNumber - 1]; // Lấy kết quả của vòng hiện tại
                   const isWin = JSON.stringify(user.result) === JSON.stringify(periodResult);
@@ -158,6 +164,9 @@ const Belt = () => {
                  
                     return (
                       <div key={userIndex} className="w-full flex flex-col gap-2 bg-gray-100 rounded-xl py-4 px-2">
+                        <span className="text-sm font-bold max-sm:text-[12px]">
+                          Khoảng thời gian : {moment(user?.createdAt).format("YYYY-MM-DD HH:mm:ss")}
+                        </span>
                         <span className="text-sm font-bold max-sm:text-[12px]">
                           Tài khoản người chơi: {user.UserId?.username}
                         </span>
@@ -189,7 +198,7 @@ const Belt = () => {
                       </div>
                     );
                   
-                  }) : <div className="text-black font-semibold max-sm:text-[14px]">Chưa có người chơi nào đánh giá !</div>}
+                  }) : null}
               </div>}
               </div>
           ))

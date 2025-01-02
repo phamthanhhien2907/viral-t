@@ -288,10 +288,10 @@ const updatedStatusWithDraw = async (req, res) => {
   try {
     const { WithDrawId, userId } = req.params;
     const { status, reson } = req.body;
+    console.log(status, reson);
     let updateBill;
     let findWithDraw = await withDraw.findById(WithDrawId);
     let user = await users.findById(userId);
-    console.log(status);
     if (findWithDraw && status === "Không thành công") {
       updateBill = await users.findByIdAndUpdate(
         userId,
@@ -323,10 +323,7 @@ const updatedStatusWithDraw = async (req, res) => {
       );
     }
     return res.status(200).json({
-      success:
-        status === "Thành công"
-          ? true
-          : updateBill.status === "Không thành công" && false,
+      success: updateBill ? true : false,
       updateBill,
     });
   } catch (error) {

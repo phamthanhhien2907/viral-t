@@ -15,11 +15,7 @@ import DataGridUI from "../Admin/DataGrid";
 import Loader from "@/components/custom ui/Loader";
 const TransformHistory = () => {
   const [withDraw, setWithDraw] = useState([]);
-  const [reson, setReson] = useState(null);
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate();
-  const [value, setValue] = useState(null)
-  const searchValue = value?.toString().toUpperCase();
   const getWithDrawalHistory = async () => {
     setLoading(true)
     const data = await apiGetAllWithDraw();
@@ -32,29 +28,23 @@ const TransformHistory = () => {
       setLoading(false)
     };
   };
-  const handleCheck = async (id, userId, status) => {
-    const data = await apiUpdatedStatus(id, userId, {
-      status: status,
-      reson: reson,
-    });
-    if (data?.success) {
-      toast.success("Đã chấp nhận rút tiền thành công");
-    } else {
-      toast.error("Không chấp nhận rút tiền");
-    }
-    getWithDrawalHistory()
-  };
-  const onChangeValue = (e) => {
-    setValue(e.target.value)
-  }
+  // const handleCheck = async (id, userId, status) => {
+  //   const data = await apiUpdatedStatus(id, userId, {
+  //     status: status,
+  //     reson: reson,
+  //   });
+  //   if (data?.success) {
+  //     toast.success("Đã chấp nhận rút tiền thành công");
+  //   } else {
+  //     toast.error("Không chấp nhận rút tiền");
+  //   }
+  //   getWithDrawalHistory()
+  // };
+  
   useEffect(() => {
     getWithDrawalHistory();
   }, []);
-  useEffect(() => {
-    if(value?.length > 0) {
-      getWithDrawalHistory();
-    }
-  }, [value]);
+  
   return (
     loading ? <Loader/> : <DataGridUI initialRows={withDraw} callApi={getWithDrawalHistory} type="transform"/>
     // <div className="h-screen">

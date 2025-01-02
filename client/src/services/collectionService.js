@@ -12,6 +12,18 @@ export const apiGetCollection = () =>
       console.log("Failed to get product", error);
     }
   });
+export const apiGetCountdownTimerCollection = () =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const response = await axiosConfig({
+        method: "GET",
+        url: `/collections/countdownTimer`,
+      });
+      resolve(response);
+    } catch (error) {
+      reject(error);
+    }
+  });
 export const apiDeleteCollectionById = (id) =>
   new Promise(async (resolve, reject) => {
     try {

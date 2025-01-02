@@ -1,18 +1,16 @@
 import { Separator } from "../ui/separator";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Delete from "../custom ui/Delete";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { useNavigate, useParams } from "react-router-dom";
 import { apiCreateCollection } from "@/services/collectionService";
 import {
@@ -25,6 +23,8 @@ const CustomerForm = ({ initialData }) => {
   const navigate = useNavigate();
   const [isLoadding, setIsLoadding] = useState(false);
   const [invisible, setInvisible] = useState(false);
+  const [age, setAge] = useState('');
+
   const { id } = useParams();
   const { register, handleSubmit, watch, setValue, getValues, onChange } =
     useForm({
@@ -40,6 +40,9 @@ const CustomerForm = ({ initialData }) => {
       e.preventDefault();
     }
   };
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const onSubmit = async (values) => {
     try {
       setIsLoadding(true);
@@ -49,7 +52,7 @@ const CustomerForm = ({ initialData }) => {
           creditCartOfBank : values?.creditCartOfBank,
           nameOfBank : values?.nameOfBank,
           nameOfUser : values?.nameOfUser,
-          role : values?.role,
+          role : age,
           password : values?.passwordChange,
           username : values?.username
         });
@@ -185,13 +188,20 @@ const CustomerForm = ({ initialData }) => {
         />
         </div>
         <div className="flex items-start flex-col gap-4">
-          <label htmlFor="role">Vai trò ( Vui lòng nhập user hoặc admin )</label>
-          <Input
-          {...register("role")}
-          placeholder="Vai trò"
-          onKeyDown={handleKeyPress}
-          type="text"
-        />
+          <label htmlFor="role">Vai trò ( Vui lòng chọn user hoặc admin )</label>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Vai trò</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Vai trò"
+              onChange={handleChange}
+            >
+              <MenuItem value={"user"}>user</MenuItem>
+              <MenuItem value={"admin"}>admin</MenuItem>
+            </Select>
+          </FormControl>
         </div>
         <div className="flex gap-10 pt-4">
           <Button type="submit" className="bg-blue-500 text-white hover:bg-blue-700">

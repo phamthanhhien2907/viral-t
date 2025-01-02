@@ -6,6 +6,7 @@ const {
   deleteCollection,
   updateCollection,
   updateCollectionById,
+  countdownTimer,
 } = require("../controllers/collectionController");
 const multer = require("multer");
 const { verifyToken, isAdmin } = require("../middlewares/verifyToken");
@@ -21,6 +22,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 router.get("/", getAllCollection);
+router.get("/countdownTimer", countdownTimer);
 router.get("/:id", getCollectionById);
 router.get("/different/:id", getCollectionDifference);
 router.delete("/delete/:id", [verifyToken, isAdmin], deleteCollection);

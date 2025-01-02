@@ -1,6 +1,21 @@
 const collection = require("../models/collection");
 const users = require("../models/users");
+let endTime = new Date().getTime() + 15 * 1000;
+const countdownTimer = async (req, res) => {
+  const currentTime = new Date().getTime();
+  const timeLeft = endTime - currentTime;
 
+  if (timeLeft <= 0) {
+    endTime = currentTime + 15 * 1000;
+    return res.status(200).json({
+      timeLeft: 15 * 1000,
+    });
+  } else {
+    return res.status(200).json({
+      timeLeft,
+    });
+  }
+};
 const createCollection = async (req, res) => {
   try {
     const { title, image, video, category } = req.body;
@@ -132,4 +147,5 @@ module.exports = {
   deleteCollection,
   getCollectionDifference,
   updateCollectionById,
+  countdownTimer,
 };

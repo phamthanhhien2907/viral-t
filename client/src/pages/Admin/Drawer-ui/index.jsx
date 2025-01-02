@@ -246,7 +246,7 @@ export default function MiniDrawer() {
           </IconButton>
           <div className='flex items-center justify-between w-full gap-4'>
           <Typography variant="p" noWrap component="div" className="max-sm:text-sm">
-            {currentData?.role} [Hậu tổng đài]
+            {currentData?.role} [Hậu đài]
           </Typography>
           <div className='flex items-center gap-2 cursor-pointer max-sm:text-sm' onClick={() => dispatch(logout())}>
             <p>Đăng xuất</p>
@@ -404,12 +404,12 @@ export default function MiniDrawer() {
           <Collapse in={openList4} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItemButton sx={{ pl: 8.5 }} onClick={() => setActive(2)}>
-                <ListItemText primary="Quản lí video" primaryTypographyProps={{
+                <ListItemText primary="Quản lý video" primaryTypographyProps={{
               fontSize : isMobile ?  "11px" : "15px"
             }}/>
               </ListItemButton>
               <ListItemButton sx={{ pl: 8.5 }} onClick={() => setActive(3)}>
-                <ListItemText primary="Quản lí danh mục" primaryTypographyProps={{
+                <ListItemText primary="Quản lý danh mục" primaryTypographyProps={{
               fontSize : isMobile ?  "11px" : "15px"
             }}/>
               </ListItemButton>

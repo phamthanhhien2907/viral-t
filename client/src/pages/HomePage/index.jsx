@@ -9,7 +9,7 @@ import danhgia6 from "@/assets/danhgia6.png";
 import { apiGetCollection } from "@/services/collectionService";
 import { useEffect, useState } from "react";
 import CustomSlide from "../SlickSlider/cinema";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Marquee from "react-fast-marquee";
 import CampaignIcon from '@mui/icons-material/Campaign';
@@ -22,6 +22,20 @@ const HomePage = ({ currentData }) => {
   const [categoryBelt, setCategoryBelt] = useState([])
   const [collection, setCollection] = useState(null);
   const navigate = useNavigate()
+  const location = useLocation();
+  const showAlert = location.state?.showAlert || false;
+  const [alert, setAlert] = useState(false);
+  useEffect(() => {
+    if (showAlert) {
+      setAlert(true);
+      const timer = setTimeout(() => {
+        setAlert(false);
+      }, 5000);
+
+      // Dọn dẹp timeout khi component unmount
+      return () => clearTimeout(timer);
+    }
+  }, [showAlert]);
   const [t] = useTranslation("global");
   const getCollection = async () => {
     const data = await apiGetCollection();
@@ -83,7 +97,14 @@ const HomePage = ({ currentData }) => {
             </Link>
           ))}
       </div>
-      <div className="flex items-center px-4 py-2 justify-between">
+      <div className="flex items-center px-4 py-2 justify-between relative">
+        {alert && (
+          <div className="absolute top-10 z-20 w-[90%] h-12 left-7 mx-auto bg-black opacity-80 rounded-xl ">
+            <span className="text-white w-full h-full flex items-center justify-center">
+              Vui lòng nâng cấp VIP để xem!
+            </span>
+          </div>
+        )}
         <div className="flex items-center gap-2">
           <div className="w-[3px] h-[22px] bg-[#775fd9]"></div>
           <span className="text-[#c24491] text-base font-semibold">

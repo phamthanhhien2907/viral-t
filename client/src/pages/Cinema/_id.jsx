@@ -1,20 +1,28 @@
 import Loader from "@/components/custom ui/Loader";
 import { pathImg } from "@/lib/constant";
+import * as React from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 import {
   apiGetCollectionById,
   apiGetCollectionDifferentById,
+  apiGetCountdownTimerCollection,
   apiUpdateCollection,
 } from "@/services/collectionService";
 import { ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { BigPlayButton, Player } from "video-react";
+import { useSelector } from "react-redux";
 const DetailCinema = () => {
   const [played, setPlayed] = useState(false);
   const [collection, setCollection] = useState(null);
   const [differentCollection, setDifferentCollection] = useState(null);
   const [loading, setLoading] = useState(false);
   const { id, title, userId } = useParams();
+  const [isFetching, setIsFetching] = useState(false); // Thêm cờ kiểm tra
+  const { currentData } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const getCollectionById = async (id) => {
     setLoading(true);
@@ -35,6 +43,35 @@ const DetailCinema = () => {
     const data = await apiUpdateCollection(id, userId, { view: userId });
     console.log(data);
   };
+    // Hàm gọi API để lấy thời gian còn lại
+    const fetchTimeLeft = async () => {
+      if (isFetching) return; 
+      setIsFetching(true); 
+  
+      try {
+        const response = await apiGetCountdownTimerCollection();
+        if(response?.timeLeft <= 1000 && currentData?.withDraw <= 500) {
+          window.localStorage.setItem("page", 0);
+          navigate("/", { state: { showAlert: true } });
+        }
+      } catch (error) {
+        console.error("Lỗi khi gọi API đếm ngược:", error);
+      } finally {
+        setIsFetching(false); // Đặt lại cờ sau khi hoàn tất
+      }
+    };
+    
+    useEffect(() => {
+      // Gọi API ngay khi component được tải
+      fetchTimeLeft();
+  
+      // Thiết lập interval để gọi API mỗi giây
+      const interval = setInterval(() => {
+        fetchTimeLeft();
+      }, 1000);
+  
+      return () => clearInterval(interval); // Dọn dẹp khi component unmount
+    }, []);
   useEffect(() => {
     getCollectionById(id);
     getCollectionDifferent(id);
@@ -81,8 +118,9 @@ const DetailCinema = () => {
                   {collection?.view?.length || 0} Lượt xem
                 </span>
               </div>
-              <div className="w-full h-5 px-4 my-4">
+              <div className="w-full h-5 px-4 my-4 relative">
                 <span className="font-semibold">Đề xuất</span>
+               
               </div>
               <div className="flex flex-col gap-4 px-2 pb-4">
                 {differentCollection &&
@@ -112,6 +150,7 @@ const DetailCinema = () => {
               </div>
             </div>
           </div>
+          
         </div>
       )}
     </>
